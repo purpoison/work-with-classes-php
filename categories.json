@@ -1,0 +1,34 @@
+[
+    {
+        "phone": [
+            {
+                "name": "iPhone 12",
+                "price": "800"
+            },
+            {
+                "name": "Galaxy Flip",
+                "price": "1000"
+            },
+            {
+                "name": "Motorola",
+                "price": "400"
+            }
+        ]
+    },
+    {
+        "computers": [
+            {
+                "name": "iMac",
+                "price": "2000"
+            },
+            {
+                "name": "Lenovo",
+                "price": "1000"
+            },
+            {
+                "name": "MacBook Air",
+                "price": "1500"
+            }
+        ]
+    }
+]
