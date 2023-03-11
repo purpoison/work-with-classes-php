@@ -10,6 +10,13 @@
     h5{
         margin: 5px;
     }
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+    a:hover{
+        color: red;
+    }
 </style>
 <body>
     <?php 
@@ -84,9 +91,8 @@
                 }
                 putData($categoriesData, $categoriesPath);
                 putData([], $dataPath);
-            }else{
-                    echo 'Enter products!';
-                }
+            }
+
             if($categoriesData) {
                 foreach ($categoriesData as $key => $value) {
                     foreach($value as $name => $list){
@@ -96,19 +102,20 @@
 
                 }
             }
-            echo "<pre>";
-            var_dump($categories);
-            echo "</pre>";
-
-            // foreach($categories as $key => $value){
-            //     echo $value->getCategoryName();
-            // }
             if($categories):
         ?>
             <ul>
                 <?php foreach($categories as $category):?>
-                    
+                    <li> <a href="?name=<?php echo $category->getCategoryName()?>"><?php echo $category->getCategoryName()?></a></li>
                 <?php endforeach?>
+                <?php 
+                    $findName = $_GET['name'];
+                    $myObject = searchCategory($categories, $findName)->getCategoryProducts();
+                    foreach($myObject as $object){
+                        $rez = implode(' : ', $object);
+                        echo "<p> {$rez} $</p>";
+                    }
+                ?>
             </ul>
         <?php endif?>
     </div>

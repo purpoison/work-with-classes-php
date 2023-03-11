@@ -15,8 +15,6 @@
             return $this->name;
         }
     }
-    $p = new Product('iPhone 14', 1000);
-    $p->getName();
 
     class Category{
         private $name;
@@ -33,8 +31,4 @@
             return $this->list_products;
         }
     }
-    $c = new Category('phone', ['mac', 'hh', 'efe']);
-    // echo "<pre>";
-    // echo var_dump($c);
-    // echo "</pre>";
 ?>
