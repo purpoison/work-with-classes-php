@@ -24,4 +24,11 @@
         $json_string = json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
         file_put_contents($path, $json_string);
     }
+    function searchCategory($categories, $name){
+        foreach($categories as $value){
+            if (($value->getCategoryName()) == $name){
+                return $value;
+            }
+        }
+    }
 ?>

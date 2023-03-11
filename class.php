@@ -21,6 +21,7 @@
     class Category{
         private $name;
         private $list_products;
+
         public function __construct($name, $list_products){
             $this->name = $name;
             $this->list_products = $list_products;
@@ -32,4 +33,8 @@
             return $this->list_products;
         }
     }
+    $c = new Category('phone', ['mac', 'hh', 'efe']);
+    // echo "<pre>";
+    // echo var_dump($c);
+    // echo "</pre>";
 ?>

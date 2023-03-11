@@ -88,15 +88,29 @@
                     echo 'Enter products!';
                 }
             if($categoriesData) {
-                foreach ($categoriesData as $key => $category) {
-                    $categories = new Category($key, $category);
-                    // array_push($products, $product);
-                    var_dump($categories);
+                foreach ($categoriesData as $key => $value) {
+                    foreach($value as $name => $list){
+                        $category = new Category($name, $list);
+                        array_push($categories, $category);
+                    }
+
                 }
             }
+            echo "<pre>";
+            var_dump($categories);
+            echo "</pre>";
 
-
+            // foreach($categories as $key => $value){
+            //     echo $value->getCategoryName();
+            // }
+            if($categories):
         ?>
+            <ul>
+                <?php foreach($categories as $category):?>
+                    
+                <?php endforeach?>
+            </ul>
+        <?php endif?>
     </div>
 </body>
 </html>
